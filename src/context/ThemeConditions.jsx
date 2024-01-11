@@ -1,8 +1,11 @@
 import React, { useState, useEffect, createContext } from "react";
 
+// Retrieve the initial color theme preference
 const getInitialTheme = () => {
+  // Check if the window object and localStorage are available
   if (typeof window !== "undefined" && window.localStorage) {
     const storedPrefs = window.localStorage.getItem("color-theme");
+
     if (typeof storedPrefs === "string") {
       return storedPrefs;
     }
@@ -12,14 +15,16 @@ const getInitialTheme = () => {
       return "dark";
     }
   }
+
   return "light";
 };
 
 export const ThemeContext = createContext();
 
-export const ThemeProvider = ({ initialTheme, children }) => {
+export const ThemeConditions = ({ initialTheme, children }) => {
   const [theme, setTheme] = useState(getInitialTheme);
 
+  // Dynamically set the color theme and store it in localStorage
   const rawSetTheme = (theme) => {
     const root = window.document.documentElement;
     const isDark = theme === "dark";
