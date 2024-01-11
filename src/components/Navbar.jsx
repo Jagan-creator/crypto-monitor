@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ThemeToggle from "./ThemeToggle";
+import ToggleLightDark from "./ToggleLightDark";
 
 const Navbar = () => {
   return (
     <div>
       <Link to="/">
-        <h1>Cryptobase</h1>
+        <h1>CRYPTO MONITOR</h1>
       </Link>
       <div>
-        <ThemeToggle />
+        <ToggleLightDark />
       </div>
     </div>
   );
