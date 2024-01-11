@@ -1,11 +1,11 @@
 import React from "react";
-import { ThemeProvider } from './context/ThemeContext'
+import { ThemeConditions } from './context/ThemeConditions'
 import Navbar from "./components/Navbar";
 
 function App() {
-  return <ThemeProvider>
+  return <ThemeConditions>
     <Navbar />
-  </ThemeProvider>
+  </ThemeConditions>
 }
 
 export default App;
