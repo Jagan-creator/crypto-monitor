@@ -1,10 +1,10 @@
 import React from "react";
 import CoinNav from "../components/CoinNav";
 
-function Home() {
+function Home({ coins }) {
   return (
     <div>
-      <CoinNav />
+      <CoinNav coins={coins} />
     </div>
   );
 }
