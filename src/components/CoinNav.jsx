@@ -1,9 +1,11 @@
 import React from "react";
 import { AiOutlineStar } from "react-icons/ai";
+import { Sparklines, SparklinesLine } from "react-sparklines";
 
 function CoinNav({ coins }) {
   return (
     <div>
+      {/* Search section */}
       <div>
         <h1>Search</h1>
         <form>
@@ -14,6 +16,7 @@ function CoinNav({ coins }) {
         </form>
       </div>
 
+      {/* Table displaying coin information */}
       <table>
         <thead>
           <tr>
@@ -29,6 +32,7 @@ function CoinNav({ coins }) {
           </tr>
         </thead>
         <tbody>
+          {/* Map through the "coins" array and render a row for each coin */}
           {coins.map((coin) => (
             <tr key={coin.id}>
               <td>
@@ -49,7 +53,11 @@ function CoinNav({ coins }) {
               <td>{coin.price_change_percentage_24h}</td>
               <td>{coin.total_volume}</td>
               <td>{coin.market_cap}</td>
-              <td>{coin.sparkline_in_7d.price}</td>
+              <td>
+                <Sparklines data={coin.sparkline_in_7d.price}>
+                  <SparklinesLine color="teal" />
+                </Sparklines>
+              </td>
             </tr>
           ))}
         </tbody>
