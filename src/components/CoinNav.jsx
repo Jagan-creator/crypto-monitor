@@ -1,8 +1,9 @@
-import React from "react";
-import { AiOutlineStar } from "react-icons/ai";
-import { Sparklines, SparklinesLine } from "react-sparklines";
+import React, { useState } from "react";
+import CoinItem from "./CoinItem";
 
 function CoinNav({ coins }) {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <div>
       {/* Search section */}
@@ -10,6 +11,7 @@ function CoinNav({ coins }) {
         <h1>Search</h1>
         <form>
           <input
+            onChange={(e) => setSearchText(e.target.value)}
             type="text"
             placeholder="find a coin"
           />
@@ -33,33 +35,23 @@ function CoinNav({ coins }) {
         </thead>
         <tbody>
           {/* Map through the "coins" array and render a row for each coin */}
-          {coins.map((coin) => (
-            <tr key={coin.id}>
-              <td>
-                <AiOutlineStar />
-              </td>
-              <td>{coin.market_cap_rank}</td>
-              <td>
-                <div>
-                  <img
-                    src={coin.image}
-                    alt={coin.id}
-                  />
-                  <p>{coin.name}</p>
-                </div>
-              </td>
-              <td>{coin.symbol}</td>
-              <td>{coin.current_price}</td>
-              <td>{coin.price_change_percentage_24h}</td>
-              <td>{coin.total_volume}</td>
-              <td>{coin.market_cap}</td>
-              <td>
-                <Sparklines data={coin.sparkline_in_7d.price}>
-                  <SparklinesLine color="teal" />
-                </Sparklines>
-              </td>
-            </tr>
-          ))}
+          {coins
+            .filter((value) => {
+              if (searchText === "") {
+                return true;
+              } else if (
+                value.name.toLowerCase().includes(searchText.toLowerCase())
+              ) {
+                return true;
+              }
+              return false;
+            })
+            .map((coin) => (
+              <CoinItem
+                key={coin.id}
+                coin={coin}
+              />
+            ))}
         </tbody>
       </table>
     </div>
