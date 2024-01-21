@@ -1,13 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
+import { doc, onSnapshot, updateDoc } from "firebase/firestore";
+import { db } from "../firebase";
+import { UserAuth } from "../context/AuthContext";
 
 const CoinWatchList = () => {
   const [coins, setCoins] = useState([]);
+  const { user } = UserAuth();
+
+  useEffect(() => {
+    onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
+      setCoins(doc.data()?.watchList);
+    });
+  }, [user?.email]);
+
+  const coinPath = doc(db, "users", `${user?.email}`);
+  const deleteCoin = async (passedid) => {
+    try {
+      const result = coins.filter((item) => item.id !== passedid);
+      await updateDoc(coinPath, {
+        watchList: result,
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
 
   return (
     <div>
-      {coins.length === 0 ? (
+      {coins?.length === 0 ? (
         <p>
           You currently have no coins saved to your watch list. Please save a
           coin to add it to your watch list.{" "}
@@ -23,7 +45,7 @@ const CoinWatchList = () => {
             </tr>
           </thead>
           <tbody>
-            {coins.map((coin) => (
+            {coins?.map((coin) => (
               <tr
                 key={coin.id}
                 className="h-[60px] overflow-hidden"
@@ -38,14 +60,17 @@ const CoinWatchList = () => {
                         className="w-8 mr-4"
                       />
                       <p className="hidden sm:table-cell">{coin?.name}</p>
-                      <p className="text-gray-500 text-left text-sm">
+                      <p className="text-gray-500 text-left text-sm ml-3">
                         {coin?.symbol.toUpperCase()}
                       </p>
                     </div>
                   </Link>
                 </td>
                 <td className="pl-8">
-                  <AiOutlineClose className="cursor-point" />
+                  <AiOutlineClose
+                    onClick={() => deleteCoin(coin.id)}
+                    className="cursor-point"
+                  />
                 </td>
               </tr>
             ))}
