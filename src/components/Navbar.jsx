@@ -26,7 +26,10 @@ const Navbar = () => {
   return (
     // Navbar container
     <div className="rounded-div flex items-center justify-between h-20 font-bold">
-      <Link to="/">
+      <Link
+        className="ml-6"
+        to="/"
+      >
         <h1 className="text-2xl">CRYPTO MONITOR</h1>
       </Link>
 
@@ -35,7 +38,7 @@ const Navbar = () => {
       </div>
 
       {user?.email ? (
-        <div>
+        <div className="mr-6">
           <Link
             to="/account"
             className="p-4"
@@ -50,7 +53,7 @@ const Navbar = () => {
             to="/login"
             className="p-4 hover:text-accent"
           >
-            Sign In
+            Login
           </Link>
           <Link
             to="/register"
@@ -78,13 +81,22 @@ const Navbar = () => {
         }
       >
         <ul className="w-full p-4">
-          <li className="border-b py-6">
+          <li
+            onClick={handleNav}
+            className="border-b py-6"
+          >
             <Link to="/">Home</Link>
           </li>
-          <li className="border-b py-6">
-            <Link to="/">Account</Link>
+          <li
+            onClick={handleNav}
+            className="border-b py-6"
+          >
+            <Link to="/account">Account</Link>
           </li>
-          <li className="border-b py-6">
+          <li
+            onClick={handleNav}
+            className="border-b py-6"
+          >
             <ToggleLightDark />
           </li>
         </ul>
@@ -92,12 +104,18 @@ const Navbar = () => {
         {/* Mobile menu buttons */}
         <div className="flex flex-col w-full p-4">
           <Link to="/login">
-            <button className="w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl">
+            <button
+              onClick={handleNav}
+              className="w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl"
+            >
               Login
             </button>
           </Link>
           <Link to="/register">
-            <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl">
+            <button
+              onClick={handleNav}
+              className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl"
+            >
               Register
             </button>
           </Link>
