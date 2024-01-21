@@ -25,7 +25,7 @@ const ToggleLightDark = () => {
   );
 
   return (
-    <div className="p-2">
+    <div>
       {theme === "dark"
         ? renderMode(<HiSun />, "Light Mode")
         : renderMode(<HiMoon />, "Dark Mode")}
