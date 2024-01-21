@@ -19,7 +19,7 @@ function Register() {
     setError(""); // Clearing previous error messages
     try {
       await register(email, password); // Calling the register function from AuthContext
-      navigate("/");
+      navigate("/account");
     } catch (e) {
       setError(e.message); // Handling registration errors
       console.log(e.message);
