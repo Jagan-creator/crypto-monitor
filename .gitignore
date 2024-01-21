@@ -11,6 +11,9 @@
 # production
 /build
 
+# build
+hosting.YnVpbGQ.cache
+
 # misc
 .DS_Store
 .env
