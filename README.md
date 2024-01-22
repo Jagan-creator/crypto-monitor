@@ -26,17 +26,25 @@ Crypto Monitor is a web application that allows users to monitor cryptocurrency 
 
 ### Light & Dark Mode
 
+- Users can alternate between light and dark mode as they prefer
+
 ![](./public/assets/crypto-monitor%20light-dark-preview.gif)
 
 ### Search for Coins
+
+- Coins are able to be searched for based on their registered name
 
 ![](./public/assets/crypto-monitor%20search-preview.gif)
 
 ### Add Coins to Watchlist
 
+- Once registered, users can add coins to their watchlist for tracking or later use
+
 ![](./public/assets/crypto-monitor%20watchlist-preview.gif)
 
 ### Detailed Crypto Currency Pages
+
+- Each cryptocurrency has an individualized page with various statistical information
 
 ![](./public/assets/crypto-monitor%20currency-page-preview.gif)
 
