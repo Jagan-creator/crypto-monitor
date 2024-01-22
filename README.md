@@ -11,6 +11,10 @@
 
 Crypto Monitor is a web application that allows users to monitor cryptocurrency prices and trends. Stay updated with real-time data and make informed decisions about your crypto investments.
 
+Check out the live link to Crypto Monitor ![here!](https://crypto-monitor-3b289.web.app/?)
+
+https://crypto-monitor-3b289.web.app/?
+
 ## Features
 
 - Real-time cryptocurrency price tracking
