@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Crypto Monitor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [About](#about)
+- [Features](#features)
+- [Preview](#preview)
+- [Installation](#installation)
 
-In the project directory, you can run:
+## About
 
-### `yarn start`
+Crypto Monitor is a web application that allows users to monitor cryptocurrency prices and trends. Stay updated with real-time data and make informed decisions about your crypto investments.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Real-time cryptocurrency price tracking
+- Historical price charts for analysis
+- Customizable watchlist for favorite cryptocurrencies
+- User-friendly interface for easy navigation
+- Responsive design for desktop and mobile devices
+- User registration to keep track of personal watchlist
+- Light and dark mode for better user experience
+- Search navigation to find specific cryptocurrencies
 
-### `yarn test`
+## Preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Light & Dark Mode
 
-### `yarn build`
+![](./public/assets/crypto-monitor%20light-dark-preview.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Search for Coins
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./public/assets/crypto-monitor%20search-preview.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Add Coins to Watchlist
 
-### `yarn eject`
+![](./public/assets/crypto-monitor%20watchlist-preview.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Detailed Crypto Currency Pages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](./public/assets/crypto-monitor%20currency-page-preview.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To install and run Crypto Monitor locally, follow these steps:
 
-## Learn More
+```bash
+# Clone the repository
+git clone https://github.com/Jagan-creator/crypto-monitor.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Navigate to the project directory
+cd crypto-monitor
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Install dependencies
+npm install
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Run the application
+npm start
+```
